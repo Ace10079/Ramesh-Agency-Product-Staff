@@ -6,12 +6,36 @@ import { generateProductPDF } from "../utils/pdfGenerator";
 
 const CATEGORY_OPTIONS = [
   "All",
+  "Bath Mats",
+  "Bed Cover",
+  "Bed Protector",
+  "Bedsheets",
+  "BedSpreads",
+  "Blanket",
+  "Blinds",
+  "Carpets",
+  "Cotton Towels",
   "Curtains",
-  "Sofa Cover",
-  "Bedsheet",
-  "Pillow Cover",
+  "Cushion Cover",
+  "Deewan Set",
+  "Dohar",
+  "Door Mats",
+  "Fabric",
+  "Kerchief",
+  "Lungi",
+  "Mosquito net",
+  "Napkin",
+  "Pillows",
+  "Pillow Covers",
+  "Comforters",
+  "Sofa back",
+  "Stitching",
+  "Table Cloth",
+  "Towels",
   "Tracks",
   "Accessories",
+  "Vesty",
+  "Shawls",
 ];
 
 export default function Dashboard() {
@@ -157,7 +181,9 @@ export default function Dashboard() {
               disabled={!selected.length || pdfGenerating}
               className="flex items-center space-x-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
             >
-              {pdfGenerating ? "Generating PDF..." : `Generate PDF (${selected.length})`}
+              {pdfGenerating
+                ? "Generating PDF..."
+                : `Generate PDF (${selected.length})`}
             </button>
 
             {selected.length > 0 && (
@@ -181,7 +207,9 @@ export default function Dashboard() {
         {/* Loading / Table */}
         {isLoading ? (
           <div className="bg-white rounded-2xl shadow-xl p-12 text-center animate-pulse">
-            <p className="text-slate-700 text-lg font-medium">Loading products...</p>
+            <p className="text-slate-700 text-lg font-medium">
+              Loading products...
+            </p>
           </div>
         ) : (
           <ProductTable
