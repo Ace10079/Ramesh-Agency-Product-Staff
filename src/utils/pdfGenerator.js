@@ -26,11 +26,12 @@ export const generateProductPDF = (products) => {
 
   autoTable(doc, {
     startY: 30,
-    head: [["Name", "Size", "Unit", "Rate"]],
+    head: [["Name", "Size", "Unit","Category", "Rate"]],
     body: products.map((p) => [
       p.productName,
       p.size,
       p.perUnit,
+      p.category,
       ` ${p.rate}`,
     ]),
     styles: {
